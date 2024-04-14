@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 app.get('/items', async (req, res) => {
   const storedItems = await getStoredItems();
-  // await new Promise((resolve, reject) => setTimeout(() => resolve(), 4000));
+  await new Promise((resolve, reject) => setTimeout(() => resolve(), 2000));
   res.json({ items: storedItems });
 });
 
@@ -39,4 +39,3 @@ app.post('/items', async (req, res) => {
 });
 
 app.listen(8080);
-console.log('Server is running on port 8080');
